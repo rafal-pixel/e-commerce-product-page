@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__brand">
+        <img src="images/logo.svg" alt="logo website">
+      </div>
+      <nav class="navbar">
+        <a href="" class="navbar__link">Collections</a>
+        <a href="" class="navbar__link">Men</a>
+        <a href="" class="navbar__link">Women</a>
+        <a href="" class="navbar__link">About</a>
+        <a href="" class="navbar__link">Contact</a>
+      </nav>
+      <div class="header__profile">
+        <button class="basket-shopping">
+          <img src="images/icon-cart.svg" alt="basket shopping">
+          <!-- <span id="basket-count-product"></span> -->
+        </button>
+        <div class="image-avatar">
+          <img src="images/image-avatar.png" alt="avatar picure" class="img-cover">
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="product-card" data-item-id="1" data-title="Fall Limited Edition Sneakers" data-price="125.00" data-img="images/image-product-1.jpg">
+        <div class="product-card__col product-images">
+          <div class="swiper main-carousel">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/image-product-1.jpg" class="img-cover" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/image-product-2.jpg" class="img-cover" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/image-product-3.jpg" class="img-cover" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/image-product-4.jpg" class="img-cover" />
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <div class="swiper thumbs-carousel">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/image-product-1-thumbnail.jpg" class="img-cover" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/image-product-2-thumbnail.jpg" class="img-cover" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/image-product-3-thumbnail.jpg" class="img-cover" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/image-product-4-thumbnail.jpg" class="img-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <article class="product-card__col product-info">
+          <span class="product-info__category">Sneaker Company</span>
+          <h2 class="product-info__heading">Fall Limited Edition Sneakers</h2>
+          <p class="product-info__lead">These low-profile sneakers are your perfect casual wear companion. Featuring a
+            durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+          <div class="prices">
+            <div class="prices__new" data-sales="50%">$125.00</div>
+            <div class="prices__old">$250.00</div>
+          </div>
+          <div class="add-to-cart">
+            <div class="add-to-cart-quantity">
+              <button class="add-to-cart-quantity__minus"></button>
+              <input type="number" class="add-to-cart-quantity__value" value="0" min="1" max="99">
+              <button class="add-to-cart-quantity__plus"></button>
+            </div>
+            <button class="add-to-cart-button">
+              <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                  fill="#FFF" fill-rule="nonzero" />
+              </svg>
+              Add to cart
+            </button>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <!-- Sneaker Company
+
+  
+
+  These low-profile sneakers are your perfect casual wear companion. Featuring a 
+  durable rubber outer sole, they’ll withstand everything the weather can offer.
+
+  $125.00
+  50%
+  $250.00
+
+  0
+  Add to cart -->
+
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
