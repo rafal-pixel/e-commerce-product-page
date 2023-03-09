@@ -15,6 +15,10 @@
 
   <div class="wrapper">
     <header class="header">
+      <button class="header__menu-mobile">
+        <img src="images/icon-menu.svg" alt="" class="open">
+        <img src="images/icon-close.svg" alt="" class="close">
+      </button>
       <div class="header__brand">
         <img src="images/logo.svg" alt="logo website">
       </div>
@@ -28,16 +32,29 @@
       <div class="header__profile">
         <button class="basket-shopping">
           <img src="images/icon-cart.svg" alt="basket shopping">
-          <!-- <span id="basket-count-product"></span> -->
+          <span class="basket-count-product">10</span>
         </button>
         <div class="image-avatar">
           <img src="images/image-avatar.png" alt="avatar picure" class="img-cover">
+        </div>
+        <div class="shopping-items">
+          <div class="shopping-items__heading">
+            Cart
+          </div>
+          <div class="shopping-items__items">
+            <div class="items-basket">
+
+            </div>
+            <a href="#" class="btn btn--primary">Checkout</a>
+          </div>
+          <div class="shopping-items__empty">Your cart is empty.</div>
         </div>
       </div>
     </header>
 
     <main class="main">
-      <div class="product-card" data-item-id="1" data-title="Fall Limited Edition Sneakers" data-price="125.00" data-img="images/image-product-1.jpg">
+      <div class="product-card" data-item-id="1" data-title="Fall Limited Edition Sneakers" data-price="125.00"
+        data-img="images/image-product-1.jpg">
         <div class="product-card__col product-images">
           <div class="swiper main-carousel">
             <div class="swiper-wrapper">
@@ -101,24 +118,15 @@
         </article>
       </div>
     </main>
+  </div>
+  <div class="lightbox">
+    <div class="lightbox-content">
+      dfsa
+    </div>
+  </div>
 
-    <!-- Sneaker Company
-
-  
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart -->
-
-    <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/main.js"></script>
-
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
