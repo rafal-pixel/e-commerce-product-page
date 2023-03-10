@@ -206,23 +206,92 @@ if (buttonMobile) {
   });
 }
 
-const customLightBox = (index, mainImg, thumbsImg) => {
+const lightboxElement = (images) => {
+  let slides = "";
+  for (const image of images) {
+    slides += `<div class="swiper-slide">
+                <img src="${image.src}" class="img-cover" />
+              </div>`;
+  }
+  return slides;
+};
+
+const customLightBox = (index, mainImg) => {
   const body = document.querySelector("body");
   const lightbox = document.createElement("div");
-  lightbox.classList.add("lightbox");
+  lightbox.classList.add("lightbox-wrapper");
+  const slides = lightboxElement(mainImg);
+  lightbox.innerHTML = `
+    <div class="lightbox-content">
+      <button class="lightbox-close"></button>
+      <div class="swiper lightbox-image">
+        <div class="swiper-wrapper">
+        ${slides}
+        </div>
+        <div class="lightbox-next"></div>
+        <div class="lightbox-prev"></div>
+      </div>
+      <div class="swiper lightbox-thumbs">
+        <div class="swiper-wrapper">
+        ${slides}
+        </div>
+      </div>
+    </div>`;
 
   document.body.appendChild(lightbox);
+
+  const images = lightbox.querySelector(".lightbox-image");
+  const thumbs = lightbox.querySelector(".lightbox-thumbs");
+  const prev = images.querySelector(".lightbox-prev");
+  const next = images.querySelector(".lightbox-next");
+
+  if (images) {
+    let swiperThumbs;
+    swiperThumbs = new Swiper(thumbs, {
+      spaceBetween: 30,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+      initialSlide: index,
+    });
+
+    let options = {
+      effect: "fade",
+      loop: true,
+      initialSlide: index,
+      navigation: {
+        nextEl: next,
+        prevEl: prev,
+      },
+    };
+
+    if (thumbs) {
+      Object.assign(options, {
+        thumbs: {
+          swiper: thumbs,
+        },
+      });
+    }
+
+    const swiperMain = new Swiper(images, options);
+  }
+
+  const closeLightbox = document.querySelector(".lightbox-close");
+  if (closeLightbox) {
+    closeLightbox.addEventListener("click", () => {
+      document.querySelector(".lightbox-wrapper").remove();
+    });
+  }
 };
 
 const productImages = document.querySelector(".product-images");
 
-if (productImages) {
-  const mainImg = document.querySelectorAll(".main-carousel img");
-  const thumbsImg = document.querySelectorAll(".thumbs-carousel img");
+const mainImg = document.querySelectorAll(".lightbox img");
 
+if (productImages && window.innerWidth > 991) {
   mainImg.forEach((el, index) => {
     el.addEventListener("click", () => {
-      customLightBox(index, mainImg, thumbsImg);
+      customLightBox(index, mainImg);
     });
   });
 }

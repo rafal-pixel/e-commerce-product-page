@@ -51,20 +51,6 @@ button {
     }
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-    width: 40px !important;
-    height: 40px !important;
-    &::after {
-        content: '';
-        width: 40px;
-        height: 40px;
-        display: block;
-        border-radius: 50%;
-        background: $white-color no-repeat url(../images/icon-previous.svg) 14px center;
-        background-size: 9px 14px;
-    }
-}
 
 .overflow {
     overflow: hidden;
@@ -79,6 +65,28 @@ button {
         display: block;
         background-color: rgba(0, 0, 0, .75);
         transition-delay: .2s;
+    }
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: 40px !important;
+    height: 40px !important;
+    &::after {
+        content: '';
+        width: 40px;
+        height: 40px;
+        display: block;
+        border-radius: 50%;
+        background: $white-color no-repeat url(../images/icon-previous.svg) 14px center;
+        background-size: 9px 14px;
+    }
+    &:hover {
+        &::after {
+            background: $white-color no-repeat url(../images/icon-previous-hover.svg) 14px center;
+            background-size: 9px 14px;
+        }
     }
 }
 
